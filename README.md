@@ -1,8 +1,10 @@
 Haskell_For_Cats:
+
 Because Haskell can be hard, and cats are busy, but if cats can do it so can you.   
 
-We gonna take Haskell by storm, with a book and video series. 
-We will meet every two weeks and knock off a couple of chapters and accompanying videos. 
+We will take Haskell by storm, with a book and video series. 
+We shall meet every two weeks and knock off a couple of chapters and accompanying videos. 
+
 By the time we are down we will be Hask(>>=)Kats, which are side-effect free happy kitties after they grow up. 
 
 Join the Meetup:
@@ -135,5 +137,5 @@ Additonal resources. . . .
 Brian Beckman explained the monand so well even my cat gets it. 
 http://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads
 
-Brian Beckman interviews Rich Hickey: two of the greatest explicators in a single video.
+Brian Beckman interviews Rich Hickey: 
 http://channel9.msdn.com/Shows/Going+Deep/Expert-to-Expert-Rich-Hickey-and-Brian-Beckman-Inside-Clojure
