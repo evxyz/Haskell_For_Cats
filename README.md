@@ -1,120 +1,114 @@
 Haskell_For_Cats:
+Because Haskell can be hard, and cats are busy, but if cats can do it so can you.   
 
-'Cause if cats can do this so can you!
-=============
-<<<<<<< HEAD
+We gonna take Haskell by storm, with a book and video series. 
+We will meet every two weeks and knock off a couple of chapters and accompanying videos. 
+By the time we are down we will be Hask(>>=)Kats, which are side-effect free happy kitties after they grow up. 
 
+Join the Meetup:
 http://www.meetup.com/Haskell_For_Cats/
 
-The plan is to do thirteen chapters of Haskell using Graham Hutton's Book "Programming Haskell" plus 
-	Erik Meijer's Video series "Functional Programming Fundamentals," 
-	in Haskell, which mirrors the above mentioned book. 
-	
- 	
- 	We will meet every two weeks and bang through two chapters and two vids at a time. 
-=======
-The plan is to do thirteen weeks of Haskell 
-	from the beginning . . .  
-		using Graham Hutton's Book "Programming Haskell"  
-		and Erik Meijer's Video series Functional Programming in Haskell
- 
-			which mirrors the above mentioned book.
->>>>>>> primes gets odds
- 
-	This will be for those that have never programmed 
-		but are open to learning.  
-	
-	Also welcome are those who have programmed in other languages and paradigms
-		(namely O.O.P. and pocedural and/or iterative)  
-		but are new to the functional approach. 
-video
+Please download and install the G.H.C. (Glasgow Haskell Compiler) which is part of: 
+http://www.haskell.org/platform/ 
+
+For OSX-Maverick here's some special instructions, thanks to Kat: 
+http://haskell-workshop.github.io/tutorials/osx/2013-10-23-mavericks-ghc.html  
+
+
+here  is the link to the Erik's video:
 https://channel9.msdn.com/Series/C9-Lectures-Erik-Meijer-Functional-Programming-Fundamentals/Lecture-Series-Erik-Meijer-Functional-Programming-Fundamentals-Chapter-1
-	you can watch on line or download. The links to the next 12 videos are there as well. 
+
+NOTE! the Haskell-platform, has all the tools we'll need and then some. 
+The book and video both use the deprecated Hugs compiler; it works okay; 
+but the renowned Glasgow Haskell Compiler  7.6.x included in the Haskell-platform, 
+is the current standard. 
+
+When it's installed and you open a command prompt (terminal) and type ghci 
+you should get the prelude prompt, Prelude>. 
+And you are ready to go. 
+
+Those using windows might have an easier time with WinGHCi, 
+which makes loading modules easier. 
+
+Any text editor will do, but some do a better job of highlighting and such. 
+Popular choices are Emacs, Vim, and Sublime. 
+It's a good idea to set tabs to spaces otherwise GHC will complain. 
+
+ 
+
+Extra Haskell  goodness from "Learn your a Haskell for greater good": 
+http://learnyouahaskell.com/chapters
+
+Good video for early chapters of "Learn You a Haskell . . ." 
+http://www.cs.nott.ac.uk/~gmh/book.html
+
+answers to questions in Hutton's book.
+http://www.cs.nott.ac.uk/~gmh/book.html
 
 ---------------------------------------------	
 
 	Why Haskell? 
-<<<<<<< HEAD
-=======
 
-	Because it's fast: (out of the box), 
-		as fast as Java and a whole lot sweeter.
-			and (with tweaking) 
-			it can be as fast as C++, 
-			with a lower error rate.
->>>>>>> primes gets odds
-	
-	Because memory is NOW cheap enough and so are CPUs and GPUs.
-	
-	Because Haskell is fast: (out of the box), 
+        Because Haskell is fast: (out of the box), 
 		as fast as Java and way more terse.
 		and (with tweaking) 
 		Haskell can be as fast as C++, 
 		with less errors.
 	
-<<<<<<< HEAD
+	
+	Because memory 
+                is NOW cheap enough 
+                        and so are CPUs and GPUs.
+	
+	
 	Because Haskell will scale: 
 		presently to 40+ cores* and 
 		reach 20+ million new requests per second 
 		on a single machine.
-		Most other languages will choke on a faction of that load.  
 	
 	Because Haskell is terse and concise: 
 		The stats are: 1.4 bugs per 100 lines of code, 
-		requardless of the language.
+		regardless of the language.
 		Less lines of code = less bugs.
 		
 	Because Haskell favors lazy evaluation:
 		It can work with infinite values, and not blow the stack, 
 		Haskell just calls only what it needs only when it needs it.
-=======
-	Because it is terse and concise: 
-		The stats are: 1.4 bugs per 100 lines of code, 
-		requardless of the language.
-		Less lines of code = less bugs.
->>>>>>> primes gets odds
-		
+
 	Because it is strongly typed:
 		Strong typing reduces mismatch errors. 
-		'cause if some idiot can, some idiot will; 
-		and late at night after the nth beer 
+		'cause if some idiot can, 
+                some idiot will; 
+		and late at night 
+                after the nth beer 
 			that idiot might just be you.
 	
 	Because Haskell is self documenting
 		wanna know what a function does just ask it.
 		It will tell you what it takes in 
-<<<<<<< HEAD
 		and what it gives back, 
 		always!
-=======
-		and what it gives back, always!
 	
-   Because Haskell weeds out sloppy programming habits. 
-      If it is sloppily done it wont compile. 
+        Because Haskell weeds out sloppy programming habits. 
+                If it is sloppily done it wont compile.
 
 	Because Haskell is faster to working code. 
 		'cause once Haskell has compiled you are more than half done.
 
 	Because there is less to test. 
 		Pure functions, reduce your testing surface. 
-		Same imputs yeild same results regardless of context. 
+		Same inputs yield same results regardless of context. 
 		Immutability, means less shared memory. 
 		Haskell is NOT fragile!  
->>>>>>> primes gets odds
 
-	Because Haskell is faster to WORKING code. 
-		Once Haskell has compiled you are half done.
-		
-	Because Haskell is almost entirely stateless, there is much less to test.
+	Because Haskell is almost entirely stateless, 
 		Pure functions, are immutable, and unchanging.  
-		The same inputs will always yeild the same results, always. 
-		 
+		Mutability is safely contained in monads 
+                stuff doesn't change without your consent.
+                 
 	Haskell has a direct connection to Lambda Calculus; it strives for mathmatical purity. 
-		In Haskell: mathmatics and computer science converge rather than lock horns.
-<<<<<<< HEAD
+		In Haskell: mathmatics and computer science converge rather than bang heads.
 		You don't have to think math + computor, you can think just the math instead. 
-=======
->>>>>>> primes gets odds
 
 ---------------------------
 		
@@ -122,16 +116,15 @@ https://channel9.msdn.com/Series/C9-Lectures-Erik-Meijer-Functional-Programming-
 	
 	Anywhere you need: 
 		many-core concurrency 
-<<<<<<< HEAD
       		big sort
 		big compute, 
 		fast matching,
       		quick transformations
-		and better security.
+		and tighter security.
 	
 	And you can use it in addition to other languages; 
 	it is strength where and 
-	win you need it, 
+	when you need it, 
 	and it's pretty to. =) 
 	 
 -----------------------------
@@ -144,15 +137,3 @@ http://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads
 
 Brian Beckman interviews Rich Hickey: two of the greatest explicators in a single video.
 http://channel9.msdn.com/Shows/Going+Deep/Expert-to-Expert-Rich-Hickey-and-Brian-Beckman-Inside-Clojure
-=======
-      big sort
-		big compute, 
-		fast matching,
-      quick transformations
-		and better security.
-	
-	And you can use it in addition to other languages; 
-	it is strength where and win you need it, 
-	and it's pretty too. 
-	 
->>>>>>> primes gets odds
