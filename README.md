@@ -2,13 +2,13 @@ Haskell_For_Cats:
 
 Because Haskell can be hard, and cats are busy, but if cats can do it so can you.   
 
+Join us:
+http://www.meetup.com/Haskell_For_Cats/
+
 We will take Haskell by storm, with a book and video series. 
 We shall meet every two weeks and knock off a couple of chapters and accompanying videos. 
 
 By the time we are down we will be Hask(>>=)Kats, which are side-effect free happy kitties after they grow up. 
-
-Join the Meetup:
-http://www.meetup.com/Haskell_For_Cats/
 
 Please download and install the G.H.C. (Glasgow Haskell Compiler) which is part of: 
 http://www.haskell.org/platform/ 
