@@ -19,4 +19,29 @@ lList = [ ("Lisp",      0.706), ("F#",     0.498), ("Common_Lisp",    0.387), ("
 sum(snd(unzip lList))
 -- 5.548
 
-{----------------------}  ML      0.234%  {----------------------}  Prolog        0.335%  -- Big list of Tuples that are composed of Char + list of Integers -- Sum this list of Ints -- average  list of Ints -- then sort ascending [ (C,       [1, 2,  1,  1]), (Java,     [2, 1,  4,  0]), (Objective_C,  [3, 38, 0,  0]), (C++,      [4, 3,  2,  6]), (C#,       [5, 7,  0,  0]), (PHP,      [6, 5,  0,  0]), (Visual_Basic, [7, 4,  5,  5]), (Python,   [8, 6,  29, 0]), (Transact_SQL, [9, 45, 0,  0]), (JavaScript,   [10,    10, 14, 0]), (Lisp,     [15,    21, 17, 3]), (COBOL,        [19,    17, 3,  12]), (Ada,     [22,    23, 18, 2]) ]
+{----------------------}  ML      0.234%  {----------------------}  Prolog        0.335% 
+
+-- Big list of Tuples that are composed of Char + list of Integers
+-- we assigned a symbol "perennials" to represent the list
+-- map across the "perennials" List.
+-- list of Tuples where length = 13
+-- length n-1 to 0 is the walk across my list. 
+-- !!0 to !!12 covers the list 
+perennials!!0 -- > ("C",[1,2,1,1])
+perennials!!1 -- > ("Java",[2,1,4,0])
+-- snd gets me the list to sum 
+snd (perennials!!1)-- > [2,1,4,0]
+sum (snd (perennials!!1))-- > 7
+
+-- ?? do i want to sum each and create a new list? 
+
+-- fst gets me the name  
+fst (perennials!!1)-- > "Java"
+
+-- Sum this list of Ints 
+-- ?? average  list of Ints 
+-- then sort ascending 
+-- Lower score is better
+-- >let
+perennials =
+[("C",[1,2,1,1]),("Java",[2,1,4,0]),("Objective_C",[3,38,0,0]),("C++",[4,3,2,6]),("C#",[5,7,0,0]),("PHP",[6,5,0,0]),("Visual_Basic",[7,4,5,5]),("Python",[8,6,29,0]),("Transact_SQL",[9,45,0,0]),("JavaScript",[10,10,14,0]),("Lisp",[15,21,17,3]),("COBOL",[19,17,3,12]),("Ada",[22,23,18,2])]
