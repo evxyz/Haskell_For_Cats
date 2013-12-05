@@ -30,18 +30,60 @@ sum(snd(unzip lList))
 perennials!!0 -- > ("C",[1,2,1,1])
 perennials!!1 -- > ("Java",[2,1,4,0])
 -- snd gets me the list to sum 
+
 snd (perennials!!1)-- > [2,1,4,0]
-sum (snd (perennials!!1))-- > 7
+
+-- ?? dadaList1 =([]:[x|x <- sum snd (perennials!![0..12])
+
+[sum (snd (perennials!!1))]-- > [7]
+
+Prelude> [sum (snd (perennials!!0))]
+[5]
 
 -- ?? do i want to sum each and create a new list? 
+Prelude> [[sum (snd (perennials!!1))],[sum (snd (perennials!!0))]]
+[[7],[5]]
 
 -- fst gets me the name  
 fst (perennials!!1)-- > "Java"
-
+Prelude> [[(fst (perennials!!1))],[(fst (perennials!!0))]]
+[["Java"],["C"]]
+-- ?? zip again? 
+Prelude> let dada2 = [[(fst (perennials!!1))],[(fst (perennials!!0))]]
+ let dada1 = [[sum (snd (perennials!!1))],[sum (snd (perennials!!0))]]
+ 
+ Prelude> zip dada1 dada2
+[([7],["Java"]),([5],["C"])]
+------------------------------------ 
+Prelude> :i Ord
+class Eq a => Ord a where
+  compare :: a -> a -> Ordering
+  (<) :: a -> a -> Bool
+  (>=) :: a -> a -> Bool
+  (>) :: a -> a -> Bool
+  (<=) :: a -> a -> Bool
+  max :: a -> a -> a
+  min :: a -> a -> a
+        -- Defined in `GHC.Classes'
+instance (Ord a, Ord b) => Ord (Either a b)
+  -- Defined in `Data.Either'
+instance Ord a => Ord [a] -- Defined in `GHC.Classes'
+instance Ord Ordering -- Defined in `GHC.Classes'
+instance Ord Int -- Defined in `GHC.Classes'
+instance Ord Float -- Defined in `GHC.Classes'
+instance Ord Double -- Defined in `GHC.Classes'
+instance Ord Char -- Defined in `GHC.Classes'
+----------------------------------------------------
+Prelude> :browse Data.Either
+data Either a b = Left a | Right b
+either :: (a -> c) -> (b -> c) -> Either a b -> c
+Data.Either.lefts :: [Either a b] -> [a]
+Data.Either.partitionEithers :: [Either a b] -> ([a], [b])
+Data.Either.rights :: [Either a b] -> [b]
+----------------------------------------------------
 -- Sum this list of Ints 
 -- ?? average  list of Ints 
 -- then sort ascending 
 -- Lower score is better
 -- >let
-perennials =
-[("C",[1,2,1,1]),("Java",[2,1,4,0]),("Objective_C",[3,38,0,0]),("C++",[4,3,2,6]),("C#",[5,7,0,0]),("PHP",[6,5,0,0]),("Visual_Basic",[7,4,5,5]),("Python",[8,6,29,0]),("Transact_SQL",[9,45,0,0]),("JavaScript",[10,10,14,0]),("Lisp",[15,21,17,3]),("COBOL",[19,17,3,12]),("Ada",[22,23,18,2])]
+let perennials = [("C",[1,2,1,1]),("Java",[2,1,4,0]),("Objective_C",[3,38,0,0]),("C++",[4,3,2,6]),("C#",[5,7,0,0]),("PHP",[6,5,0,0]),("Visual_Basic",[7,4,5,5]),("Python",[8,6,29,0]),("Transact_SQL",[9,45,0,0]),("JavaScript",[10,10,14,0]),("Lisp",[15,21,17,3]),("COBOL",[19,17,3,12]),("Ada",[22,23,18,2])]
