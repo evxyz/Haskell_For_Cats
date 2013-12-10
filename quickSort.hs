@@ -1,6 +1,6 @@
 module QuickSort where 
 
-f [] 		= []
+f []            = []
 
 f (x:xs)        = f ys ++ [x] ++ f zs 
                   where 
