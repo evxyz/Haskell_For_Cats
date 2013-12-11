@@ -8,7 +8,7 @@ Because Haskell can be hard, and cats are busy, but if they can do it so can you
 
 We gonna take Haskell by storm, with a book and video series. 
 We will meet every two weeks and knock off a couple of chapters and accompanying videos. 
-By the time we are down we will be Hask(>>=)Kats, which are side-effect free happy kitties after they grow up. 
+By the time we are done we will be Hask(>>=)Kats, which are side-effect free happy kitties after they grow up. 
 
 Join the Meetup:
 http://www.meetup.com/Haskell_For_Cats/
