@@ -1,0 +1,6 @@
+module Doubs where
+ 
+ --       Doubs   :: Num a => Integer -> Integer 
+             Doubs x = x + x
+
+        

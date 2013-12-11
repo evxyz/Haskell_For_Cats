@@ -1,4 +1,4 @@
--- Of the set of common programming languages (as compiled by Tiobe), that are wholly or in part derived from the C programming language.
+-- the set of common programming languages (as compiled by Tiobe), that are wholly or in part derived from the C programming language.
 
 -- list of tuples that are Char + Float
 -- Sum the percentages for a total. --
@@ -11,8 +11,7 @@ ghci> sum(snd(unzip cList))
 60.326
 -}
 
--- 
--- Of the set of common programming languages (as compiled by Tiobe), that are wholly or in part derived from the Lisp language.
+-- the set of common programming languages (as compiled by Tiobe), that are wholly or in part derived from the Lisp language.
 -- list of tuples that are Char + Float
 -- > let 
 lList = [ ("Lisp",      0.706), ("F#",     0.498), ("Common_Lisp",    0.387), ("Scheme",     0.354), ("Haskell",    0.250), ("Ruby", 1.303),("JavaScript", 2.050) ]
@@ -82,8 +81,6 @@ Prelude> let dada2 = [[(fst (perennials!!1))],[(fst (perennials!!0))]]
  
  Prelude> zip dada1 dada2
 [([7],["Java"]),([5],["C"])]
--- ?? order operators on Tuples?
--- it would be better [[7],[5]] were [7,5] 
 ----------------------------------------------------
 -- Sum this list of Ints 
 -- ?? average  list of Ints 
