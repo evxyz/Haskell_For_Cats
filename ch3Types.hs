@@ -22,5 +22,15 @@ tuple is a list of hetrogeneous types who's length is known
                                                     13:00
 
 :load 
-dada123 example                                     16:45                                     
--} 
+dada123 example                                     16:45
+-}
+-- mult :: Integer -> (Integer -> ( Integer -> Integer))
+
+mult :: Int -> (Int -> ( Int -> Int))
+mult  x y z     =   x * y * z
+
+
+-- mult  x y z     =   x * y / z
+
+-- 21:26                                      
+ 
