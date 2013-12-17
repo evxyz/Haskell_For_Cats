@@ -1,5 +1,8 @@
 module CH3types where 
 import Dada123
+
+mult x y z      = x * y * z 
+
 {-                                                  1:00
  - Types as a collections of values 
  - :: has type
@@ -22,15 +25,37 @@ tuple is a list of hetrogeneous types who's length is known
                                                     13:00
 
 :load 
-dada123 example                                     16:45
+dada123 example                                     16:45                                     
+
+lambda's 
+
+curring 					                                  18:00
+
+mult x y z    = x * y * z
+       functions being right associative            22:03
+
+partial application                                 23:30
+       type application 
+          associates to the right 
+       function application 
+          associates left                           25:00
+
+generics a.k.a polymorphic                          26:30
+  calling length from another function 
+    will subject that function to conform to
+      the Int type. 
+
+(Num a)=> [a] -> a                                  35:27 
+  interfaces v.  typeClasses                            
+    summing floats aswell  
+
+(+)                                                 36:30
+  ask the compiler to infer what my function is 
+    and modify as needbe   
+
+
+
 -}
--- mult :: Integer -> (Integer -> ( Integer -> Integer))
-
-mult :: Int -> (Int -> ( Int -> Int))
-mult  x y z     =   x * y * z
 
 
--- mult  x y z     =   x * y / z
-
--- 21:26                                      
  
