@@ -34,7 +34,7 @@ module Ch2Probs where
 
 -- 2.3 Function application 
 
-        
+        f               :: a -> Double          
         f               = \a -> b+c*d
                           where 
                                  
