@@ -50,11 +50,34 @@ module Ch2Probs where
 	                        where
 	                        a = 10
 	                        xs = [1, 2, 3, 4, 5]
- 
+-}
+        double x        = x+x
+        quadruple x     = double(double x)
+{-
+        
+*Ch2Probs> take (double 2) [5,4,3,2,1,0]
+[5,4,3,2]
+
+-}
         average ns      = sum ns `div` length ns
 
+-- *Ch2Probs> average  [5,4,3,2,1,0]
+-- 2
+
+
         factorial n     = product[1..n]
--} 
-   
 
+-- lib function "last", that takes last element from a [xs] list. 
 
+ astL xs  = [xs!!x|x <-[(length xs)-1]]              
+-- [[5,4,3,2,1,0]!!x|x <-[(length[5,4,3,2,1,0])-1]]       
+-- Prelude> astL [5,4,3,2,1,0]
+-- [0]
+
+-- redo init 
+-- in 2 different ways.
+     
+-- concat[(take x [5,4,3,2,1,0])|x <-[(length[5,4,3,2,1,0])-1]]
+niti xs = concat[(take x xs)|x <-[(length xs)-1]]
+-- Prelude> niti [5,4,3,2,1,0]
+-- [5,4,3,2,1]
