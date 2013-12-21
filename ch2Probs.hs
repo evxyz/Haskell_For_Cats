@@ -83,4 +83,4 @@ module Ch2Probs where
         nitI xs         = take ((length xs)-1)xs
 -- Prelude> niti [5,4,3,2,1,0]
 -- [5,4,3,2,1]
-take ((length xs)-1)xs
+
