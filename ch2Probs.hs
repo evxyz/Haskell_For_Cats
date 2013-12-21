@@ -70,7 +70,8 @@ module Ch2Probs where
 -- lib function "last", that takes last element from a [xs] list. 
 
         astL xs         = [xs!!x|x <-[(length xs)-1]]
-        asTL xs         = concat ([drop x xs| x <-[(length xs)-1]])              
+        asTL xs         = concat ([drop x xs| x <-[(length xs)-1]]) 
+ -- [xs!!((length xs)-1)]                    
 -- [[5,4,3,2,1,0]!!x|x <-[(length[5,4,3,2,1,0])-1]]       
 -- Prelude> astL [5,4,3,2,1,0]
 -- [0]
@@ -79,7 +80,7 @@ module Ch2Probs where
 -- in 2 different ways.
      
 -- concat[(take x [5,4,3,2,1,0])|x <-[(length[5,4,3,2,1,0])-1]]
-        nitI xs         = concat[(take x xs)|x <-[(length xs)-1]]
+        nitI xs         = take ((length xs)-1)xs
 -- Prelude> niti [5,4,3,2,1,0]
 -- [5,4,3,2,1]
-        
+take ((length xs)-1)xs
