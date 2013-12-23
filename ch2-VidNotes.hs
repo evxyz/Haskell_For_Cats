@@ -43,8 +43,8 @@ dot operator                                        16:50
 --  take 4 [1..]
 --      let 
     deeda n = take n [1..n]
---  deeda 5
+                            --  deeda 5
     blah0 n = product (take n [1..])
-{- didn't take any longer 
+                            {- didn't take any longer 
  - 
     :?
