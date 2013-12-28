@@ -32,10 +32,15 @@ conjunk x y |True  && True      = True
 
 
 -- note that laziness means that nothing gets evaluated until it has to.
-
+-- tuples 
 fSt :: (t1,t2) -> t1 
 fSt (t1,t2)     = t1 
 sNd :: (t1,t2) -> t2 
 sNd (t1,t2)     = t2 
 
+-- List Patterns 
+test :: [Char] -> Bool
+test ['a',_,_]  = True
+test _          = False 
+ 
 
