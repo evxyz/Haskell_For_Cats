@@ -43,4 +43,9 @@ test :: [Char] -> Bool
 test ['a',_,_]  = True
 test _          = False 
  
-
+-- cons operator 
+{-
+*Ch4Pat> :i :
+data [] a = ... | a : [a]       -- Defined in `GHC.Types'
+infixr 5 :
+-} 
