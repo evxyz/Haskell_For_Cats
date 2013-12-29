@@ -23,6 +23,9 @@ http://haskell-workshop.github.io/tutorials/osx/2013-10-23-mavericks-ghc.html
 here  is the link to the Erik's video:
 https://channel9.msdn.com/Series/C9-Lectures-Erik-Meijer-Functional-Programming-Fundamentals/Lecture-Series-Erik-Meijer-Functional-Programming-Fundamentals-Chapter-1
 
+Slides
+http://www.cs.nott.ac.uk/~gmh/book.html
+
 NOTE! the Haskell-platform, has all the tools we'll need and then some. 
 The book and video both use the deprecated Hugs compiler; it works okay; 
 but the renowned Glasgow Haskell Compiler  7.6.x included in the Haskell-platform, 
