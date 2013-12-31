@@ -139,6 +139,8 @@ http://www.cs.nott.ac.uk/~gmh/book.html
 FootNotes: * the 40 cores ref: http://haskell.cs.yale.edu/wp-content/uploads/2013/08/hask035-voellmy.pdf
 
 Additonal resources. . . .
+Brian Hurt's wonderful explication of the why of static typing.
+http://vimeo.com/72870631
 
 Brian Beckman explained the monand so well even my cat gets it. 
 http://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads
