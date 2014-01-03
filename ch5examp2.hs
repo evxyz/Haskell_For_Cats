@@ -123,4 +123,43 @@ crack xs = encode (-factor) xs
 "wjsdib rduvmyn ephk lpdxfgt"
 -}
 
+{----------------------------------------------------------}
+-- 5.7.1 -- list comprehension an expression that calculates the sum 1^2+2^2+...100^2 of the first one hundred integer squares.
 
+-- 5.7.2 -- In a similar way to the function length, show how the library function replicate :: Int → a → [ a ] that produces a list of identical elements can be defined using a list comprehension. For example:
+-- |> replicate 3 True 
+-- [True, True, True ]
+
+{- 5.7.3 -- 
+
+A triple (x, y, z) of positive integers is pythagorean if x2 + y2 = z2. 
+Using a list comprehension, 
+define a function pyths :: Int → [ (Int , Int , Int ) ] 
+that returns 
+the list of all pythagorean triples 
+whose components are at most a given limit. 
+For example:
+> pyths 10
+[(3, 4, 5), (4, 3, 5), (6, 8, 10), (8, 6, 10)]
+-}
+
+
+{- 5.7.4 -- 
+A positive integer is perfect 
+if it equals the sum of its factors, 
+excluding the number itself. 
+Using a list comprehension and the function factors, 
+define a function perfects :: Int → [ Int ] 
+that returns the list of all perfect numbers up to a given limit. 
+For example:
+> perfects 500 [6, 28, 496]
+-} 
+
+{- 5.7.5 -- 
+Show how the single comprehension 
+[(x,y) | x ← [1,2,3],y ← [4,5,6]] 
+with two generators can be re-expressed 
+using two comprehensions with single generators. 
+Hint: make use of the library function concat 
+and nest one comprehension within the other.
+-}
