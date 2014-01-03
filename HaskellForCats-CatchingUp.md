@@ -14,7 +14,7 @@ we have done videos 1-3 already along with the corresponding chapters in the Boo
 the goal for Sunday Jan 5th is Chapter 4 & exersizes and getting through Chapter 5. 
 
 
-We are having a Catch up on Sunday the 29th for GHC config, and Github
+
 
 NOTE! the Haskell-platform, has all the tools we'll need and then some. The book and video both use the deprecated Hugs compiler; it works okay; but the renowned Glasgow Haskell Compiler 7.6.x included in the Haskell-platform, is the current standard.
 
@@ -24,6 +24,6 @@ When it's installed and you open a command prompt (terminal) and type ghci you s
 Any text editor will do, but some do a better job of highlighting and such. Popular choices are Emacs, Vim, Sublime and Notepad++. It's a good idea to set tabs to spaces otherwise GHC might complain.
 
 
-Those using windows can install WinGHCi, which makes loading modules easier.
+
 
 
