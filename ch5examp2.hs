@@ -76,9 +76,16 @@ int2let n = chr (ord 'a' + n)
 
 shift n c   | isLower c = int2let((let2int c + n) `mod`26) 
             | otherwise = c
---
 
--- table :: [ Float ] 
+encode n xs = [shift n x | x <- xs]
+
+
+-- *Ch5examp2> encode 3 "haskell is fun"
+-- "kdvnhoo lv ixq"
+-- *Ch5examp2> encode (-3) "kdvnhoo lv ixq"
+-- "haskell is fun"
+
+table :: [ Float ] 
 
 table = [ 8.2, 1.5, 2.8, 4.3, 12.7, 2.2, 2.0, 6.1, 7.0, 0.2, 0.8, 4.0, 2.4,6.7, 7.5, 1.9, 0.1, 6.0, 6.3, 9.1, 2.8, 1.0, 2.4, 0.2, 2.0, 0.1 ]
 -- percent :: Fractional a => Integer -> Integer -> a
@@ -89,3 +96,31 @@ freqs xs = [percent (c4unt x xs) n | x <- ['a'..'z']]
              where n = lowers xs
 -- *Ch5examp2> freqs"abbcccddddeeeee"
 -- [6.666666666666667,13.333333333333334,20.0,26.666666666666668,33.33333333333333,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+
+chisqr os es = sum[((o - e)^2)/e | (o,e) <- zip os es] 
+
+
+
+rotate n xs  = drop n xs ++ take n xs
+-- *Ch5examp2> rotate 3 [1,2,3,4,5]
+-- [4,5,1,2,3]
+
+-- [chisqr (rotate n table') table | n <- [0..25]]
+
+crack xs = encode (-factor) xs
+      where
+        factor = head (positions (minimum chitab) chitab)
+        chitab = [chisqr (rotate n table') table | n <- [0..25]]
+        table' = freqs xs
+{-
+*Ch5examp2> crack "kdvnhoo lv ixq"
+"haskell is fun"
+*Ch5examp2>  crack "vscd mywzboroxcsyxc kbo ecopev"
+"list comprehensions are useful"
+*Ch5examp2> crack (encode 3 "haskell")
+"piasmtt"
+*Ch5examp2> crack (encode 3 "boxing wizards jump quickly")
+"wjsdib rduvmyn ephk lpdxfgt"
+-}
+
+
