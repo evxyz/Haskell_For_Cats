@@ -3,10 +3,10 @@ module Ch3Prob where
 
 ['a','b','c']				-- :: [Char]
 ('a','b','c')				-- :: (Char, Char, Char)
-[(False,`O`),(True,'1')]	-- :: [(Bool, Char)]
+-- [(False,`O`),(True,'1')]	-- :: [(Bool, Char)]
 ([False,True],['0','1']) 	-- :: ([Bool],[Char])
 [tail,init,reverse] 		-- :: [[a] -> [a]]
---!! note line 8 is a list, 
+-- !! note line 8 is a list, 
 --where each function takes a list, 
 --and returns a list 
 {---------------2---------------}
@@ -20,12 +20,12 @@ double 			:: Num a => a -> a
 double x 		= x * 2 
 palindrome		:: Eq a => [a] -> Bool
 palindrome xs 	= reverse xs == xs  
-twice 			:: (a -> a) -> a -> a
+-- twice 			:: (a -> a) -> a -> a
 twice f x 		= f (f x) 
 
 -- note class constraints 
 
-{----------------4----------------}
+{----------------4----------------
 -- Functions equivalence and the equality type class 
 
 
@@ -37,5 +37,5 @@ blah 2 == lah 2
 -- [[5,4,3,2,1,0]!!x|x <-[(length [5,4,3,2,1,0])-1]]
 
 
-{----------------------------------} 
+----------------------------------} 
  

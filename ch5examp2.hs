@@ -1,8 +1,9 @@
-module CH5Examp where 
+module Ch5examp2 where 
 import GHC.Base
 import GHC.Char
-import GHC.Tuple
-import GHC.Types
+-- import GHC.Tuple
+-- import GHC.Types
+-- import Data.Text
 -- import GHC.IP
 -- import GHC.Exts
 -- import GHC.Stack
@@ -67,7 +68,7 @@ isSpace c= elem c "\t\n"
 
 lowers xs =l2ngth[x | x <- xs, isLower x] 
 
-count x xs = length[x'|x'<-xs,x==x']
+c4unt x xs = l2ngth[x'|x'<-xs,x==x']
 
 -- 5.5 Caesar cipher -- 
 let2int c = ord c - ord 'a'
@@ -80,15 +81,11 @@ shift n c   | isLower c = int2let((let2int c + n) `mod`26)
 -- table :: [ Float ] 
 
 table = [ 8.2, 1.5, 2.8, 4.3, 12.7, 2.2, 2.0, 6.1, 7.0, 0.2, 0.8, 4.0, 2.4,6.7, 7.5, 1.9, 0.1, 6.0, 6.3, 9.1, 2.8, 1.0, 2.4, 0.2, 2.0, 0.1 ]
-percent :: Fractional a => Integer -> Integer -> a
+-- percent :: Fractional a => Integer -> Integer -> a
 percent n m =(fromInteger n / fromInteger m) * 100
 
 
-freqs xs = [percent (count x xs) n | x <- ['a'..'z']] 
+freqs xs = [percent (c4unt x xs) n | x <- ['a'..'z']] 
              where n = lowers xs
-
-
-
-
-
-
+-- *Ch5examp2> freqs"abbcccddddeeeee"
+-- [6.666666666666667,13.333333333333334,20.0,26.666666666666668,33.33333333333333,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]

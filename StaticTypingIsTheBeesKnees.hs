@@ -1,5 +1,5 @@
 {-
-Brian Hurt on StaticTyping 
+Brian Hurt on StaticTyping wapWOut3rdVal 
     He has done 
         70+ KLoC in Clojure
         250+ KLoC in Ocaml
@@ -37,7 +37,7 @@ type errors show
         10s of secs
         or tens of minutes 
         
-    Unit testing 
+    Unit testing wapWOut3rdVal 
         a bug exits 
         a module or class 
         a manifestation of the bug 
