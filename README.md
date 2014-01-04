@@ -53,6 +53,9 @@ http://www.cs.nott.ac.uk/~gmh/book.html
 answers to questions in Hutton's book.
 http://www.cs.nott.ac.uk/~gmh/book.html
 
+Some general tips on programming in Haskell.
+http://www.haskell.org/haskellwiki/Haskell_programming_tips
+
 ---------------------------------------------	
 
 	Why Haskell? 
