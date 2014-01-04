@@ -79,10 +79,47 @@ sNd (t1,t2)     = t2
 test :: [Char] -> Bool
 test ['a',_,_]  = True
 test _          = False 
+-- *Ch4ex2>  test ['a','a','c']
+-- True
+-- *Ch4ex2>  test []
+-- False
  
 -- cons operator 
 {-
 *Ch4Pat> :i :
 data [] a = ... | a : [a]       -- Defined in `GHC.Types'
 infixr 5 :
--} 
+
+*Ch4ex2> 3:2:1:[]
+[3,2,1]
+
+-}
+-- pattern matching over lists 
+
+-- can't do "head" over an empty list
+-- "think of error as a non-terminating function" -- E.M. 39:20 
+
+f x             = 4711 
+-- *Ch4ex2> f (head[]) -- this should otherwise return an error 
+-- 4711 
+-- *Ch4ex2> head []
+-- *** Exception: Prelude.head: empty list
+
+-- types telling us a lot about a function -- 45:42 
+ta3l            :: [t] -> [t]
+ta3l  (a:as)    = as 
+
+-- http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf
+-- x:xs patterns can't be done over empty lists and they need parens
+-- around them because function application binds stronger than ":" .
+
+-- 50:00
+{- using only prefix notation and n+k-patterns (no longer allowed in Haskell 2010)
+factorial 0             = 1
+factorial (n + 1)       = (*) (n + 1) (factorial n)
+-}
+
+-- lambda expressions a.k.a. a nameless function "\x -> "
+-- treating a function like a regular value
+
+        
