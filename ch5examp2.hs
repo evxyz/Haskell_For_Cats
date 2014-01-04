@@ -1,15 +1,9 @@
 module Ch5examp2 where 
 import GHC.Base
 import GHC.Char
--- import GHC.Tuple
--- import GHC.Types
--- import Data.Text
--- import GHC.IP
--- import GHC.Exts
--- import GHC.Stack
--- import GHC.Stats
--- import GHC.TypeLits
--- import System.Random
+
+-- found the above imports to be somewhat necessary to get examples to work
+
 
 {- 5.1 -- list comp, generators 
 Prelude> [(x,y) | x <- [1..3], y <- [x..3]]
@@ -163,3 +157,15 @@ using two comprehensions with single generators.
 Hint: make use of the library function concat 
 and nest one comprehension within the other.
 -}
+
+
+-- import GHC.Tuple
+-- import GHC.Types
+-- import Data.Text
+-- import GHC.IP
+-- import GHC.Exts
+-- import GHC.Stack
+-- import GHC.Stats
+-- import GHC.TypeLits
+-- import System.Random
+
