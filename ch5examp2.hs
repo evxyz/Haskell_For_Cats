@@ -120,15 +120,24 @@ crack xs = encode (-factor) xs
 {----------------------------------------------------------}
 -- 5.7.1 -- list comprehension an expression that calculates the sum 1^2+2^2+...100^2 of the first one hundred integer squares.
 
--- 5.7.2 -- In a similar way to the function length, show how the library function replicate :: Int → a → [ a ] that produces a list of identical elements can be defined using a list comprehension. For example:
--- |> replicate 3 True 
--- [True, True, True ]
+sumTo100Sq = [sum[x^2] | x <- [1..100]]
+
+-- 5.7.2 -- In a similar way to the function length, show how the library function -- 
+-- replicate :: Int -> a -> [a] 
+-- that produces a list 
+-- of identical elements can be defined 
+-- using a list comprehension. 
+-- For example: |> replicate 3 True  -- 
+-- [True, True, True ] --
+-- l2ngth :: Num a => [t] -> a 
+-- l2ngth xs = sum[1|_<-xs]
+ 
 
 {- 5.7.3 -- 
 
 A triple (x, y, z) of positive integers is pythagorean if x2 + y2 = z2. 
 Using a list comprehension, 
-define a function pyths :: Int → [ (Int , Int , Int ) ] 
+define a function pyths :: Int -> [ (Int , Int , Int ) ] 
 that returns 
 the list of all pythagorean triples 
 whose components are at most a given limit. 
@@ -143,7 +152,7 @@ A positive integer is perfect
 if it equals the sum of its factors, 
 excluding the number itself. 
 Using a list comprehension and the function factors, 
-define a function perfects :: Int → [ Int ] 
+define a function perfects :: Int -> [ Int ] 
 that returns the list of all perfect numbers up to a given limit. 
 For example:
 > perfects 500 [6, 28, 496]
@@ -151,13 +160,27 @@ For example:
 
 {- 5.7.5 -- 
 Show how the single comprehension 
-[(x,y) | x ← [1,2,3],y ← [4,5,6]] 
+[(x,y) | x -> [1,2,3],y -> [4,5,6]] 
 with two generators can be re-expressed 
 using two comprehensions with single generators. 
 Hint: make use of the library function concat 
 and nest one comprehension within the other.
 -}
 
+-- 5.7.6. Redefine the function positions using the function find.
+--
+{- 5.7.7. The scalar product of two lists of integers xs and ys of length n is given by the sum of the products of corresponding integers:
+
+n-1
+
+In a similar manner to the function chisqr , show how a list comprehension
+can be used to define a function scalarproduct :: [ Int ] ? [ Int ] ? Int that
+returns the scalar product of two lists. For example:
+
+> scalarproduct [1, 2, 3] [4, 5, 6]
+32
+-}
+-- 5.7.8. Modify the Caesar cipher program to also handle upper-case letters
 
 -- import GHC.Tuple
 -- import GHC.Types
