@@ -122,8 +122,7 @@ crack xs = encode (-factor) xs
 
 sumTo100Sq = [sum[x^2] | x <- [1..100]]
 
--- 5.7.2 -- In a similar way to the function length, show how the library function -- 
--- replicate :: Int -> a -> [a] 
+-- 5.7.2 -- In a similar way to the function length, show how the library function -- replicate :: Int -> a -> [a] 
 -- that produces a list 
 -- of identical elements can be defined 
 -- using a list comprehension. 
@@ -131,7 +130,7 @@ sumTo100Sq = [sum[x^2] | x <- [1..100]]
 -- [True, True, True ] --
 -- l2ngth :: Num a => [t] -> a 
 -- l2ngth xs = sum[1|_<-xs]
- 
+repLica x = [(x:[])|x <- repeat x ] 
 
 {- 5.7.3 -- 
 
@@ -145,7 +144,7 @@ For example:
 > pyths 10
 [(3, 4, 5), (4, 3, 5), (6, 8, 10), (8, 6, 10)]
 -}
-
+-- pYths a  = [x|x .......
 
 {- 5.7.4 -- 
 A positive integer is perfect 
