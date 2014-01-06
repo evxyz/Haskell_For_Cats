@@ -1,5 +1,6 @@
 module Ch4ex2 where
 -- import PrImEs 
+--
 -- 4.1 -- renaming functions ---- 
 iSDigit c               = c >= '0' && c <= '9' 
 
@@ -16,6 +17,7 @@ sigNum n                = if n <0 then -1 else
 
 aBS n       | n >= 0                = n 
             | otherwise             = -n 
+
 ----------------------------- better than nested conditionals
 
 sIgnum n    | n < 0                 = -1 
@@ -57,7 +59,9 @@ c4nj    False   _               = False
 -- 29:00 -- pattern matching and addition 
 -- can both introduce eagerness.
 -- lazy evaluation is more functional because 
--- arg order is abstracted away. 
+-- arg order is abstracted away.
+-- order is top to bottom left to right
+-- partial evaluation also permitted. 
 {-
 c4Nj _ _        = False 
 c4Nj True True  = True       
@@ -68,7 +72,11 @@ c0Nj b b = b
 c0Nj _ _ = False 
 -- ch4ex2.hs:61:6:
 --   Conflicting definitions for `b'-}
+hEad :: [a] -> a 
+hEad (a:_) = a 
 
+-- patterns can none exuastive 
+-- having 
 -- tuples 
 fSt :: (t1,t2) -> t1 
 fSt (t1,t2)     = t1 
@@ -164,7 +172,7 @@ d3sjunk   False _       = False
 -- note that b should be either a True or False   
 -- 4.8.6
 -- using an earlier example as a guide
-dada4          = \x -> \y -> x + y  
+-- dada4          = \x -> \y -> x + y  
  
 dada6          = \x -> \y -> \z -> x * y * z 
         
