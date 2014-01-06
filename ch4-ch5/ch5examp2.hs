@@ -126,7 +126,8 @@ crack xs = encode (-factor) xs
 
 sumTo100Sq = [sum[x^2] | x <- [1..100]]
 
--- 5.7.2 -- In a similar way to the function length, show how the library function -- replicate :: Int -> a -> [a] 
+-- 5.7.2 -- In a similar way to the function length, show how the library function 
+-- replicate :: Int -> a -> [a] 
 -- that produces a list 
 -- of identical elements can be defined 
 -- using a list comprehension. 
