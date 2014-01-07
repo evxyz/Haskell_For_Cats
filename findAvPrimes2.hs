@@ -13,7 +13,7 @@ primes          n     = [x | x <- [2..n], prime x]
 average         ns    = sum ns `div`  length ns
 avPrime         n     = prime (average (primes n))
 find            k t   = [v | (k', v) <- t, k == k']
-odds         n     = map (\x -> x * 2 + 1) [0..n -1]
+odds            n     = map (\x -> x * 2 + 1) [0..n -1]
 prime_tups      n     = zip (primes n) [prime x | x <- primes n]
 prime_Tups      n     = zip [prime x | x <- primes n] (primes n) 
 findPrimeTups   n     = find True (prime_Tups n)
