@@ -160,3 +160,7 @@ or
 
 use this at the top the module 
 {-# LANGUAGE NPlusKPatterns #-}
+-----------------------------------
+to kill the monomorphic resriction 
+ ghci prompt >  :set -XNoMonomorphismRestriction  
+ - or use this in the header of your file/module  {-# LANGUAGE NoMonomorphismRestriction #-}
