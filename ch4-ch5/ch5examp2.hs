@@ -203,7 +203,7 @@ low2int                     :: Char -> Int
 low2int c                   =  ord c -> ord `a` 
 
 int2low                     :: Int -> Char 
-int2low                     = chr (ord `a` + n)
+int2low n                   = chr (ord `a` + n)
 
 upp2int                     :: Char -> Int 
 upp2int c                   =  ord c - ord `A`
