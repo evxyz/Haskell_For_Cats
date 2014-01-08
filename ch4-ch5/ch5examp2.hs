@@ -68,10 +68,10 @@ c4unt x xs = l2ngth[x'|x'<-xs,x==x']
 let2int c = ord c - ord 'a'
 int2let n = chr (ord 'a' + n)
 
-shift n c   | isLower c = int2let((let2int c + n) `mod`26) 
+sh3ft n c   | isLower c = int2let((let2int c + n) `mod`26) 
             | otherwise = c
 
-encode n xs = [shift n x | x <- xs]
+encode n xs = [sh3ft n x | x <- xs]
 
 
 -- *Ch5examp2> encode 3 "haskell is fun"
@@ -86,7 +86,7 @@ table = [ 8.2, 1.5, 2.8, 4.3, 12.7, 2.2, 2.0, 6.1, 7.0, 0.2, 0.8, 4.0, 2.4,6.7, 
 percent n m =(fromInteger n / fromInteger m) * 100
 
 
-freqs xs = [percent (c4unt x xs) n | x <- ['a'..'z']] 
+fr2qs xs = [percent (c4unt x xs) n | x <- ['a'..'z']] 
              where n = lowers xs
 -- *Ch5examp2> freqs"abbcccddddeeeee"
 -- [6.666666666666667,13.333333333333334,20.0,26.666666666666668,33.33333333333333,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
@@ -189,27 +189,27 @@ scalasrproduct xs ys = sum [x * y | (x,y) <- zip xs ys]
 
 -- 5.7.8. Modify the Caesar cipher program to also handle upper-case letters
 
-shift                       :: Int -> Char -> Char 
-shift   n c | isLower c     = int2low ((low2int c + n) `mod`26)
+sHift                       :: Int -> Char -> Char 
+sHift   n c | isLower c     = int2low ((low2int c + n) `mod`26)
             | isUpper c     = int2upp ((upp2int c + n) `mod`26)
             | otherwise     = c 
 
-freqs                       :: String -> [Float] 
-freqs   xs                  = [percent (count x xs') n | x <- [`a`..`z`]]
+fReqs                       :: String -> [Float] 
+fReqs   xs                  = [percent (count x xs') n | x <- ['a'..'z']]
                                 where 
                                     xs' = map toLower xs 
                                     n   = letters xs 
 low2int                     :: Char -> Int 
-low2int c                   =  ord c -> ord `a` 
+low2int c                   =  ord c - ord 'a' 
 
 int2low                     :: Int -> Char 
-int2low n                   = chr (ord `a` + n)
+int2low n                   = chr (ord 'a' + n)
 
 upp2int                     :: Char -> Int 
-upp2int c                   =  ord c - ord `A`
+upp2int c                   =  ord c - ord 'A'
 
 int2upp                     :: Int -> Char
-int2upp n                   = chr (ord `A` + n) 
+int2upp n                   = chr (ord 'A' + n) 
 
 letters                     :: String -> Int 
 letters xs                  = length [x|x <- xs, isAlpha] 
