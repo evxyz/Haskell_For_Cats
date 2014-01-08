@@ -1,6 +1,7 @@
 module Ch5examp2 where 
 import GHC.Base
 import GHC.Char
+import Data.List
 
 -- found the above imports to be somewhat necessary to get examples to work
 
@@ -36,8 +37,8 @@ prime n = factors n == [1,n]
 primes :: Integral t => t -> [t]
 primes n = [x | x <- [2..n],prime x] -- “sieve of Eratosthenes” is more efficient
  
-find :: Eq a => a -> [(a, t)] -> [t]
-find k t = [v|(k',v)<- t,k==k'] 
+f3nd :: Eq a => a -> [(a, t)] -> [t]
+f3nd k t = [v|(k',v)<- t,k==k'] 
 pairs xs = zip xs (tail xs)
 sorted xs = and [x<=y|(x,y)<-pairs xs]
 
@@ -62,7 +63,7 @@ isSpace c= elem c "\t\n"
 
 lowers xs =l2ngth[x | x <- xs, isLower x] 
 
-c4unt x xs = l2ngth[x'|x'<-xs,x==x']
+co5nt x xs = l2ngth[x'|x'<-xs,x==x']
 
 -- 5.5 Caesar cipher -- 
 let2int c = ord c - ord 'a'
@@ -78,19 +79,16 @@ encode n xs = [sh3ft n x | x <- xs]
 -- "kdvnhoo lv ixq"
 -- *Ch5examp2> encode (-3) "kdvnhoo lv ixq"
 -- "haskell is fun"
-
+--------------------------------------------------------
 table :: [ Float ] 
-
 table = [ 8.2, 1.5, 2.8, 4.3, 12.7, 2.2, 2.0, 6.1, 7.0, 0.2, 0.8, 4.0, 2.4,6.7, 7.5, 1.9, 0.1, 6.0, 6.3, 9.1, 2.8, 1.0, 2.4, 0.2, 2.0, 0.1 ]
 -- percent :: Fractional a => Integer -> Integer -> a
 percent n m =(fromInteger n / fromInteger m) * 100
-
-
-fr2qs xs = [percent (c4unt x xs) n | x <- ['a'..'z']] 
+fr2qs xs = [percent (co5nt x xs) n | x <- ['a'..'z']] 
              where n = lowers xs
 -- *Ch5examp2> freqs"abbcccddddeeeee"
 -- [6.666666666666667,13.333333333333334,20.0,26.666666666666668,33.33333333333333,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
-
+--------------------------------------------------------
 chisqr os es = sum[((o - e)^2)/e | (o,e) <- zip os es] 
 
 
@@ -105,7 +103,7 @@ crack xs = encode (-factor) xs
       where
         factor = head (positions (minimum chitab) chitab)
         chitab = [chisqr (rotate n table') table | n <- [0..25]]
-        table' = freqs xs
+        table' = fr2qs xs
 {-
 *Ch5examp2> crack "kdvnhoo lv ixq"
 "haskell is fun"
@@ -173,7 +171,7 @@ and nest one comprehension within the other.
 -- [(1,4),(1,5),(1,6),(2,4),(2,5),(2,6),(3,4),(3,5),(3,6)]
 
 -- 5.7.6. Redefine the function positions using the function find.
-pos3tions x xs = find x (zip xs [0..n]) 
+pos3tions x xs = f3nd x (zip xs [0..n]) 
                     where n = length xs -1 
 
 {- 5.7.7. The scalar product of two lists of integers xs and ys of length n is given by the sum of the products of corresponding integers:
@@ -187,7 +185,13 @@ returns the scalar product of two lists. For example:
 scalasrproduct xs ys = sum [x * y | (x,y) <- zip xs ys] 
 
 
--- 5.7.8. Modify the Caesar cipher program to also handle upper-case letters
+-- 5.7.8. Modify the Caesar cipher program to also handle upper-case letters 
+-- count                       :: Char -> String -> Integer
+count   x xs                = genericLength [x'|x' <- xs, x == x']
+
+toLower                     :: Char -> Char 
+toLower   c | isUpper c     = chr (ord c - ord 'A'+ ord 'a')
+            | otherwise     = c 
 
 sHift                       :: Int -> Char -> Char 
 sHift   n c | isLower c     = int2low ((low2int c + n) `mod`26)
@@ -198,7 +202,8 @@ fReqs                       :: String -> [Float]
 fReqs   xs                  = [percent (count x xs') n | x <- ['a'..'z']]
                                 where 
                                     xs' = map toLower xs 
-                                    n   = letters xs 
+                                    n   = letters xs
+ 
 low2int                     :: Char -> Int 
 low2int c                   =  ord c - ord 'a' 
 
@@ -211,5 +216,5 @@ upp2int c                   =  ord c - ord 'A'
 int2upp                     :: Int -> Char
 int2upp n                   = chr (ord 'A' + n) 
 
-letters                     :: String -> Int 
-letters xs                  = length [x|x <- xs, isAlpha] 
+-- letters                     :: String -> Int 
+letters xs                  = length [x|x <- xs, isAlpha x] 
