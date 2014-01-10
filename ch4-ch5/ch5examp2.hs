@@ -217,4 +217,4 @@ int2upp                     :: Int -> Char
 int2upp n                   = chr (ord 'A' + n) 
 
 -- letters                     :: String -> Int 
-letters xs                  = length [x|x <- xs, isAlpha x] 
+letters xs                  = genericLength [x|x <- xs, isAlpha x] 
